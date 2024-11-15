@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>NJR Track n Tune</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body>
+<div id="page-wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <h1 id="logo"><a href="display.html">NJR Track n Tune</a></h1>
+        <nav id="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="display.html">Display</a></li>
+                <li><a href="management.html">Management</a></li>
+                <li><a href="elements.html">Elements</a></li>
+                <li><a href="#" class="button primary">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Header -->
+
+    <section id="main" class="container">
+        <header>
+            <h2>NJR Track n Tune</h2>
+            <p>View and search the database records here!</p>
+        </header>
+
+        <!-- Search Form -->
+        <section class="box">
+            <h3>Search Database</h3>
+            <form method="post" action="search_results.html">
+                <div class="row gtr-uniform">
+                    <div class="col-6 col-12-xsmall">
+                        <input type="text" name="search_query" id="search_query" placeholder="Enter search term" />
+                    </div>
+                    <div class="col-6 col-12-xsmall">
+                        <select name="table_select" id="table_select">
+                            <option value="">Select Table</option>
+                            <option value="member">Member</option>
+                            <option value="meeting">Meeting</option>
+                            <option value="attendance">Attendance</option>
+                            <option value="instrument">Instrument</option>
+                            <option value="ensemble">Ensemble</option>
+                            <option value="bigshow">Big Show</option>
+                            <option value="houseshow">House Show</option>
+                            <option value="preferred_genre">Preferred Genre</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <ul class="actions special">
+                            <li><input type="submit" value="Search" class="primary" /></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <!-- Display Table Results -->
+        <section class="box">
+            <h3>Results</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Column 1</th>
+                        <th>Column 2</th>
+                        <th>Column 3</th>
+                        <!-- Add more columns as necessary -->
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Data 1</td>
+                        <td>Data 2</td>
+                        <td>Data 3</td>
+                    </tr>
+                    <!-- Add more rows dynamically based on search results -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </section>
+</div>
+</body>
+</html>
