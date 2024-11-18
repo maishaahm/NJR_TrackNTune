@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="database_styles.css">
+    <title>Database Viewer</title>
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="navbar-logo">NJR Track & Tune</div>
+    <div class="navbar-links">
+        <a href="#">Database Viewer</a>
+        <a href="#">Insert</a>
+        <a href="#">Settings</a>
+    </div>
+</nav>
+
+<div class="viewer-container">
+    <div class="header">
+        <h1>Database Viewer</h1>
+        <p>Filter and View Relations</p>
+    </div>
+
+    <!-- Filter Section -->
+    <div class="filter-section">
+        <h2>Filters</h2>
+        <form id="filter-form" class="filter-form">
+            <!-- Select Relation -->
+            <div class="filter-group">
+                <label for="relation">Relation</label>
+                <select id="relation" name="relation" onchange="updateFilters()">
+                    <option value="Member">Member</option>
+                    <option value="Meeting">Meeting</option>
+                    <option value="Attendance">Attendance</option>
+                    <option value="Instrument">Instrument</option>
+                    <option value="Ensemble">Ensemble</option>
+                    <option value="BigShow">BigShow</option>
+                    <option value="HouseShow">HouseShow</option>
+                </select>
+            </div>
+
+            <!-- Filters -->
+            <div id="dynamic-filters">
+                <!-- Filters will be dynamically added here -->
+            </div>
+
+            <!-- Apply Filters Button -->
+            <div class="filter-group" style="text-align: center; margin-top: 10px;">
+                <button type="submit" class="filter-button">Apply Filters</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Results Section -->
+    <div class="results-section">
+        <h2>Results</h2>
+        <table class="results-table">
+            <thead id="table-headers">
+            <!-- Headers will be dynamically generated -->
+            </thead>
+            <tbody id="table-body">
+            <!-- Results will be dynamically populated -->
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="database-viewer.js"></script>
+</body>
+</html>

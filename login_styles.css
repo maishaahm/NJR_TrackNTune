@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: #2a2a2a;
+    border-radius: 12px;
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.login-header p {
+    margin: 0;
+    font-size: 1rem;
+    color: #b3b3b3;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-form label {
+    font-size: 0.9rem;
+    color: #b3b3b3;
+}
+
+.login-form input {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.login-form input::placeholder {
+    color: #666666;
+}
+
+.login-button {
+    padding: 10px 15px;
+    background-color: #00b7c2; /* Matching blue color */
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #009aa4; /* Slightly darker blue on hover */
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #444444;
+}
+
+.or-text {
+    color: #b3b3b3;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.guest-button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 15px;
+    background-color: #3a3a3a; /* Neutral gray background */
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.guest-button:hover {
+    background-color: #444444; /* Slightly lighter gray on hover */
+}
