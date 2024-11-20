@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Database</title>
+</head>
+<body>
+    <div>
+        <h1>Search Database</h1>
+
+        <!-- Search Filters -->
+        <form id="searchForm">
+            <!-- Always Required Fields -->
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Enter first name" required>
+
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Enter last name" required>
+
+            <!-- Additional Filters -->
+            <div id="additionalFilters" style="display: none;">
+                <label for="instrument">Instrument</label>
+                <input type="text" id="instrument" name="instrument" placeholder="Enter instrument">
+
+                <label for="showType">Show Type</label>
+                <input type="text" id="showType" name="showType" placeholder="Enter show type">
+
+                <label for="semester">Semester</label>
+                <input type="text" id="semester" name="semester" placeholder="Enter semester">
+            </div>
+
+            <!-- Button to Toggle Additional Filters -->
+            <button type="button" onclick="toggleFilters()">Toggle Additional Filters</button>
+
+            <!-- Search Button -->
+            <button type="submit">Search</button>
+        </form>
+
+        <!-- Results Table -->
+        <div id="results">
+            <h2>Search Results</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Instrument</th>
+                        <th>Show Type</th>
+                        <th>Semester</th>
+                        <th id="actionsHeader" style="display: none;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jane</td>
+                        <td>Doe</td>
+                        <td>Guitar</td>
+                        <td>Concert</td>
+                        <td>Fall 2024</td>
+                        <td id="actions" style="display: none;">
+                            <button>Modify</button>
+                            <button>Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>John</td>
+                        <td>Smith</td>
+                        <td>Piano</td>
+                        <td>Recital</td>
+                        <td>Spring 2024</td>
+                        <td id="actions" style="display: none;">
+                            <button>Modify</button>
+                            <button>Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- JavaScript to Handle Additional Filters and User Type -->
+    <script>
+        // Example user type (EBoard or Member) - Replace with your authentication logic
+        const userType = "EBoard"; // Change to "Member" to test visibility
+
+        // Function to toggle additional filters
+        function toggleFilters() {
+            const additionalFilters = document.getElementById("additionalFilters");
+            if (additionalFilters.style.display === "none" || additionalFilters.style.display === "") {
+                additionalFilters.style.display = "block";
+            } else {
+                additionalFilters.style.display = "none";
+            }
+        }
+
+        // Show/hide Modify and Delete options based on user type
+        window.onload = function () {
+            const actionsHeader = document.getElementById("actionsHeader");
+            const actionsCells = document.querySelectorAll("#actions");
+
+            if (userType === "EBoard") {
+                actionsHeader.style.display = "table-cell";
+                actionsCells.forEach(cell => cell.style.display = "table-cell");
+            } else {
+                actionsHeader.style.display = "none";
+                actionsCells.forEach(cell => cell.style.display = "none");
+            }
+        };
+    </script>
+</body>
+</html>
