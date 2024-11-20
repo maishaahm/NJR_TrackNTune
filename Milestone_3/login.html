@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div>
+        <h1>Login</h1>
+        <form action="search.html" method="GET">
+            <!-- Username Field -->
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+            <!-- User Type Dropdown -->
+            <label for="identity">Login as</label>
+            <select id="identity" name="identity" required onchange="showPasswordField()">
+                <option value="Member">Member</option>
+                <option value="EBoard">EBoard</option>
+            </select>
+
+            <!-- Password Field (Hidden Initially) -->
+            <div id="password-container" style="display: none;">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <!-- JavaScript to Handle Dropdown Changes -->
+    <script>
+        function showPasswordField() {
+            const identity = document.getElementById("identity").value;
+            const passwordContainer = document.getElementById("password-container");
+
+            // Show the password field if EBoard is selected, hide otherwise
+            if (identity === "EBoard") {
+                passwordContainer.style.display = "block";
+            } else {
+                passwordContainer.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
+
