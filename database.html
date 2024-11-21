@@ -27,28 +27,41 @@
     <!-- Filter Section -->
     <div class="filter-section">
         <h2>Filters</h2>
+
+        <!-- Essential Filters -->
         <form id="filter-form" class="filter-form">
-            <!-- Select Relation -->
-            <div class="filter-group">
-                <label for="relation">Relation</label>
-                <select id="relation" name="relation" onchange="updateFilters()">
-                    <option value="Member">Member</option>
-                    <option value="Meeting">Meeting</option>
-                    <option value="Attendance">Attendance</option>
-                    <option value="Instrument">Instrument</option>
-                    <option value="Ensemble">Ensemble</option>
-                    <option value="BigShow">BigShow</option>
-                    <option value="HouseShow">HouseShow</option>
-                </select>
+            <!-- Relation and Name/NetID -->
+            <div class="essential-filters">
+                <div class="filter-group">
+                    <label for="relation">Relation</label>
+                    <select id="relation" name="relation" onchange="updateFilters()">
+                        <option value="">(Leave empty to search the entire database)</option>
+                        <option value="Member">Member</option>
+                        <option value="Meeting">Meeting</option>
+                        <option value="Instrument">Instrument</option>
+                        <option value="Ensemble">Ensemble</option>
+                        <option value="BigShow">Big Show</option>
+                        <option value="HouseShow">House Show</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="name-netid">Name / NetID</label>
+                    <input type="text" id="name-netid" name="name-netid" />
+                </div>
             </div>
 
-            <!-- Filters -->
-            <div id="dynamic-filters">
-                <!-- Filters will be dynamically added here -->
+            <!-- Collapsible Advanced Filters -->
+            <div class="collapsible-section">
+                <button type="button" class="collapsible-button" onclick="toggleCollapsible()">Advanced Filters</button>
+                <div class="collapsible-content" id="advanced-filters">
+                    <div class="advanced-filters-row" id="dynamic-filters">
+                        <!-- Class Year, Semester, Instrument, Performance will be dynamically added here -->
+                    </div>
+                </div>
             </div>
 
             <!-- Apply Filters Button -->
-            <div class="filter-group" style="text-align: center; margin-top: 10px;">
+            <div class="filter-group apply-filters">
                 <button type="submit" class="filter-button">Apply Filters</button>
             </div>
         </form>
@@ -67,6 +80,6 @@
         </table>
     </div>
 </div>
-<script src="database-viewer.js"></script>
+<script src="database.js"></script>
 </body>
 </html>

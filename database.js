@@ -5,38 +5,37 @@ function updateFilters() {
 
     filterContainer.innerHTML = ""; // Clear previous filters
 
-    // Common Filters
-    if (relation !== "Meeting") {
-        addFilter(filterContainer, "Name / NetID", "name-netid", "text");
-        addFilter(filterContainer, "Class Year", "class-year", "checkbox", [
+    // Meeting-Specific Filters
+    if (relation === "Meeting" || relation === "Member") {
+        addFilter(filterContainer, "Meeting Date", "meeting-date", "date");
+    }
+
+    // Advanced Filters (added to a single row in the collapsible section)
+    if (relation === "" || relation !== "Meeting") {
+        addFilter(filterContainer, "Class Year", "class-year", "multiselect", [
             "2025",
             "2026",
             "2027",
             "2028",
         ]);
-        addFilter(filterContainer, "Semester", "semester", "checkbox", [
+        addFilter(filterContainer, "Semester", "semester", "multiselect", [
             "Spring 2023",
             "Fall 2023",
             "Spring 2024",
             "Fall 2024",
         ]);
-        addFilter(filterContainer, "Performance", "performance", "checkbox", [
-            "Ensemble",
-            "HouseShow",
-            "BigShow",
-        ]);
-        addFilter(filterContainer, "Instrument", "instrument", "checkbox", [
+        addFilter(filterContainer, "Instrument", "instrument", "multiselect", [
             "Guitar",
             "Piano",
             "Violin",
             "Drums",
             "Other",
         ]);
-    }
-
-    // Meeting-Specific Filters
-    if (relation === "Meeting" || relation === "Member") {
-        addFilter(filterContainer, "Meeting Date", "meeting-date", "date");
+        addFilter(filterContainer, "Performance", "performance", "multiselect", [
+            "Ensemble",
+            "House Show",
+            "Big Show",
+        ]);
     }
 }
 
@@ -55,26 +54,30 @@ function addFilter(container, label, id, type, options = []) {
         input.id = id;
         input.name = id;
         group.appendChild(input);
-    } else if (type === "checkbox") {
+    } else if (type === "multiselect") {
+        const select = document.createElement("select");
+        select.id = id;
+        select.name = id;
+        select.classList.add("multiselect-dropdown");
+        select.multiple = true;
+
         options.forEach((option) => {
-            const wrapper = document.createElement("div");
-            const checkbox = document.createElement("input");
-            checkbox.type = "checkbox";
-            checkbox.id = `${id}-${option}`;
-            checkbox.name = id;
-            checkbox.value = option;
-
-            const optionLabel = document.createElement("label");
-            optionLabel.textContent = option;
-            optionLabel.htmlFor = checkbox.id;
-
-            wrapper.appendChild(checkbox);
-            wrapper.appendChild(optionLabel);
-            group.appendChild(wrapper);
+            const opt = document.createElement("option");
+            opt.value = option;
+            opt.textContent = option;
+            select.appendChild(opt);
         });
+
+        group.appendChild(select);
     }
 
     container.appendChild(group);
+}
+
+// Toggle Collapsible Section
+function toggleCollapsible() {
+    const advancedFilters = document.getElementById("advanced-filters");
+    advancedFilters.classList.toggle("active");
 }
 
 // Initial call to populate filters
