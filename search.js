@@ -29,7 +29,7 @@ function updateFilters() {
             "Piano",
             "Violin",
             "Drums",
-            "Other",
+            "Vocals",
         ]);
         addFilter(filterContainer, "Performance", "performance", "multiselect", [
             "Ensemble",

@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d4fac3e-a6d1-46dc-b060-00e543f6c445" name="Changes" comment="Completed the filter options for the database viewer">
+      <change afterPath="$PROJECT_DIR$/insert.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.html" beforeDir="false" afterPath="$PROJECT_DIR$/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database_styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/search.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/insert.html" beforeDir="false" afterPath="$PROJECT_DIR$/insert.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login_styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/search.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/search.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +78,7 @@
     "Node.js.database.js.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "#2 on fresh__start",
+    "git-widget-placeholder": "main",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -117,6 +116,7 @@
       <workItem from="1731889346338" duration="5014000" />
       <workItem from="1732145290547" duration="5669000" />
       <workItem from="1732212755890" duration="663000" />
+      <workItem from="1732214067108" duration="4061000" />
     </task>
     <task id="LOCAL-00001" summary="Added template only.">
       <option name="closed" value="true" />
