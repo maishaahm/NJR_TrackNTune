@@ -3,97 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="database-viewer.css">
-    <title>Database Viewer</title>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
-<div class="viewer-container">
-    <div class="header">
-        <h1>NJR Track & Tune</h1>
-        <p>eBoard Database Viewer</p>
+<div class="login-container">
+    <div class="login-header">
+        <h1>Welcome Back</h1>
+        <p>E-Board: Log in to continue</p>
     </div>
+    <form class="login-form">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-    <div class="filter-section">
-        <h2>Filter Options</h2>
-        <form id="filter-form" class="filter-form">
-            <div class="filter-group">
-                <label for="name-netid">Name / NetID</label>
-                <input type="text" id="name-netid" name="name-netid" placeholder="Enter Name or NetID">
-            </div>
-            <div class="filter-group">
-                <label for="instrument">Instrument</label>
-                <select id="instrument" name="instrument" onchange="handleInstrumentChange()">
-                    <option value="">Select Instrument</option>
-                    <option value="Guitar">Guitar</option>
-                    <option value="Piano">Piano</option>
-                    <option value="Violin">Violin</option>
-                    <option value="Drums">Drums</option>
-                    <option value="Other">Other</option>
-                </select>
-                <input
-                        type="text"
-                        id="custom-instrument"
-                        name="custom-instrument"
-                        placeholder="Enter your instrument"
-                        style="display: none; margin-top: 10px;">
-            </div>
-            <div class="filter-group">
-                <label for="semester">Semester & Year</label>
-                <select id="semester" name="semester">
-                    <option value="">Select Semester</option>
-                    <option value="Fall 2023">Fall 2022</option>
-                    <option value="Spring 2023">Spring 2023</option>
-                    <option value="Fall 2023">Fall 2023</option>
-                    <option value="Spring 2024">Spring 2024</option>
-                    <option value="Fall 2024">Fall 2024</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <label for="performance">Performance Type</label>
-                <select id="performance" name="performance">
-                    <option value="">Select Type</option>
-                    <option value="Ensemble">Ensemble</option>
-                    <option value="HouseShow">House Show</option>
-                    <option value="BigShow">Big Show</option>
-                </select>
-            </div>
-            <button type="submit" class="filter-button">Apply Filters</button>
-        </form>
-    </div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
 
-    <div class="results-section">
-        <h2>Results</h2>
-        <table class="results-table">
-            <thead>
-            <tr>
-                <th>Name</th>
-                <th>NetID</th>
-                <th>Instrument</th>
-                <th>Semester</th>
-                <th>Performance Type</th>
-            </tr>
-            </thead>
-            <tbody>
-            <!-- Dynamic rows will be populated here -->
-            <tr>
-                <td>John Doe</td>
-                <td>jdoe</td>
-                <td>Guitar</td>
-                <td>Spring 2023</td>
-                <td>Ensemble</td>
-            </tr>
-            <tr>
-                <td>Jane Smith</td>
-                <td>jsmith</td>
-                <td>Violin</td>
-                <td>Fall 2024</td>
-                <td>BigShow</td>
-            </tr>
-            </tbody>
-        </table>
+        <button type="submit" class="login-button">Log In</button>
+    </form>
+    <div class="divider">
+        <div class="line"></div>
+        <span class="or-text">OR</span>
+        <div class="line"></div>
     </div>
+    <button class="guest-button">Continue as Guest</button>
 </div>
-<script src="database-viewer.js"></script>
 </body>
 </html>
