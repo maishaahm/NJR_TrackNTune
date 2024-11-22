@@ -82,3 +82,19 @@ function toggleCollapsible() {
 
 // Initial call to populate filters
 updateFilters();
+
+function toggleDropdown() {
+    const dropdownMenu = document.getElementById('dropdownMenu');
+    dropdownMenu.style.display =
+        dropdownMenu.style.display === 'block' ? 'none' : 'block';
+}
+
+// Close dropdown when clicking outside of it
+document.addEventListener('click', (event) => {
+    const dropdown = document.querySelector('.dropdown');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    if (!dropdown.contains(event.target)) {
+        dropdownMenu.style.display = 'none';
+    }
+});

@@ -14,7 +14,12 @@
     <div class="navbar-links">
         <a href="search.html" class="active">Search</a>
         <a href="insert.html">Insert</a>
-        <a href="#">Settings</a>
+        <div class="dropdown">
+            <a href="#" class="dropdown-toggle" onclick="toggleDropdown()">Settings</a>
+            <div id="dropdownMenu" class="dropdown-menu">
+                <a href="login.html">Log Out</a>
+            </div>
+        </div>
     </div>
 </nav>
 
