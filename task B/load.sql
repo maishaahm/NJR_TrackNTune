@@ -72,6 +72,9 @@ INSERT INTO member_preferred_genre(NetID, Preferred_Genre) VALUES
 ('flindor', 'Latin'),
 ('mgreen4', 'Indie');
 
+INSERT INTO users (email, password, name) VALUES
+('admin@u.rochester.edu', MD5('admin123'), 'Admin User'), -- Password: admin123
+
 
 
 
