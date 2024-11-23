@@ -26,10 +26,12 @@ function updateFilters() {
         ]);
         addFilter(filterContainer, "Instrument", "instrument", "multiselect", [
             "Guitar",
+            "Electric Guitar",
             "Piano",
             "Violin",
             "Drums",
             "Vocals",
+            "Flute",
         ]);
         addFilter(filterContainer, "Performance", "performance", "multiselect", [
             "Ensemble",
