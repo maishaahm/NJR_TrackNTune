@@ -100,3 +100,74 @@ document.addEventListener('click', (event) => {
         dropdownMenu.style.display = 'none';
     }
 });
+
+function editRow(rowId) {
+    // Fetch existing data (e.g., via API or dynamically from the row)
+    const row = document.querySelector(`tr[data-row-id="${rowId}"]`);
+    const existingData = {
+        name: row.querySelector(".name-column").textContent,
+        instrument: row.querySelector(".instrument-column").textContent,
+    };
+
+    // Open a modal or form to edit the data
+    const editFormHtml = `
+        <form id="edit-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="${existingData.name}">
+            <label for="instrument">Instrument:</label>
+            <input type="text" id="instrument" name="instrument" value="${existingData.instrument}">
+            <button type="button" onclick="submitEdit('${rowId}')">Submit</button>
+        </form>
+    `;
+    document.body.insertAdjacentHTML("beforeend", editFormHtml);
+}
+
+// Add in edit button
+function submitEdit(rowId) {
+    const form = document.getElementById("edit-form");
+    const updatedData = {
+        name: form.querySelector("#name").value,
+        instrument: form.querySelector("#instrument").value,
+    };
+
+    // Send updated data to the server
+    fetch("edit.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ rowId, ...updatedData }),
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            if (data.success) {
+                alert("Row updated successfully!");
+                location.reload(); // Reload table to reflect changes
+            } else {
+                alert("Failed to update row.");
+            }
+        });
+}
+
+// Add delete function
+function deleteRow(rowId) {
+    if (confirm("Are you sure you want to delete this row?")) {
+        fetch("delete.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ rowId }),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.success) {
+                    alert("Row deleted successfully!");
+                    location.reload(); // Reload table to reflect changes
+                } else {
+                    alert("Failed to delete row.");
+                }
+            });
+    }
+}
+
