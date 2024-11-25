@@ -3,176 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insert Data</title>
-    <link rel="stylesheet" href="insert.css">
+    <title>Insert Member Information</title>
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-<!-- Navbar -->
-<nav class="navbar">
-    <div class="navbar-logo">NJR Track & Tune</div>
-    <div class="navbar-links">
-        <a href="search.html">Search</a>
-        <a href="insert.html" class="active">Insert</a>
-        <div class="dropdown">
-            <a href="#" class="dropdown-toggle" onclick="toggleDropdown()">Settings</a>
-            <div id="dropdownMenu" class="dropdown-menu">
-                <a href="login.html">Log Out</a>
+
+    <!-- Your form and other HTML content goes here -->
+    <form id="generalForm" class="form-container" action="insert.php" method="post">
+        <!-- Personal Information Section -->
+        <h2>Personal Information</h2>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="generalName">Name</label>
+                <input type="text" name="name" id="generalName" placeholder="Enter name">
+            </div>
+            <div class="form-group">
+                <label for="generalNetID">NetID <span class="required">*</span></label>
+                <input type="text" name="NetID" id="generalNetID" placeholder="Enter NetID" required>
             </div>
         </div>
-    </div>
-</nav>
-
-<!-- Main Content -->
-<div class="content">
-    <h1>Insert Data</h1>
-    <p>eBoard Database</p>
-
-    <div class="filter-section">
-        <form id="generalForm" class="form-container" action="insert.php" method="post">
-            <!-- Personal Information Section -->
-            <h2>Personal Information</h2>
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="generalName">Name</label>
-                    <input type="text" id="generalName" placeholder="Enter name">
-                </div>
-                <div class="form-group">
-                    <label for="generalNetID">NetID <span class="required">*</span></label>
-                    <input type="text" id="generalNetID" placeholder="Enter NetID" required>
-                </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="generalPronouns">Pronouns</label>
+                <input type="text" name="Pronouns" id="generalPronouns" placeholder="Enter pronouns">
             </div>
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="generalPronouns">Pronouns</label>
-                    <input type="text" id="generalPronouns" placeholder="Enter pronouns">
-                </div>
-                <div class="form-group">
-                    <label for="generalClassYear">Class Year</label>
-                    <input type="text" id="generalClassYear" placeholder="Enter class year">
-                </div>
+            <div class="form-group">
+                <label for="generalClassYear">Class Year</label>
+                <input type="text" name="Class_Year" id="generalClassYear" placeholder="Enter class year">
             </div>
+        </div>
 
-            <!-- Musical Information Section -->
-            <h2>Musical Information</h2>
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="instrument">Instrument</label>
-                    <input type="text" id="instrument" placeholder="Enter instrument name">
-                </div>
-                <div class="form-group">
-                    <label for="isPrimaryInstrument">Is Primary Instrument?</label>
-                    <select id="isPrimaryInstrument">
-                        <option value=""></option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </div>
+        <!-- Musical Information Section -->
+        <h2>Musical Information</h2>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="instrument">Instrument</label>
+                <input type="text" name="Instrument" id="instrument" placeholder="Enter instrument name">
             </div>
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="arrangements">Arrangements?</label>
-                    <select id="arrangements">
-                        <option value=""></option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="preferredGenre">Preferred Genre</label>
-                    <input type="text" id="preferredGenre" placeholder="Enter preferred genre">
-                </div>
+            <div class="form-group">
+                <label for="isPrimaryInstrument">Is Primary Instrument?</label>
+                <select name="Is_Primary" id="isPrimaryInstrument">
+                    <option value=""></option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
             </div>
-
-            <!-- Event Information Section -->
-            <h2>Event Information</h2>
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="semester">Semester</label>
-                    <input type="text" id="semester" placeholder="Enter semester">
-                </div>
-                <div class="form-group">
-                    <label for="showType">Show Type</label>
-                    <select id="showType" onchange="handleShowTypeChange()">
-                        <option value=""></option>
-                        <option value="house">House Show</option>
-                        <option value="big">Big Show</option>
-                        <option value="ensemble">Ensemble</option>
-                    </select>
-                </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="arrangements">Arrangements?</label>
+                <select name="Arrangements" id="arrangements">
+                    <option value=""></option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
             </div>
-            <div id="ensembleField" class="form-row" style="display: none;">
-                <div class="form-group">
-                    <label for="ensembleType">Ensemble Type</label>
-                    <input type="text" id="ensembleType" placeholder="Enter ensemble type">
-                </div>
+            <div class="form-group">
+                <label for="preferredGenre">Preferred Genre</label>
+                <input type="text" name="Preferred_Genre" id="preferredGenre" placeholder="Enter preferred genre">
             </div>
+        </div>
 
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="instrumentPlayed">Instrument Played</label>
-                    <input type="text" id="instrumentPlayed" placeholder="Enter instrument played">
-                </div>
+        <!-- Event Information Section -->
+        <h2>Event Information</h2>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="semester">Semester</label>
+                <input type="text" name="Semester" id="semester" placeholder="Enter semester">
             </div>
-            <button type="submit" class="submit-button">Submit</button>
-        </form>
-    </div>
-</div>
+            <div class="form-group">
+                <label for="showType">Show Type</label>
+                <select name="Show_Type" id="showType" onchange="handleShowTypeChange()">
+                    <option value=""></option>
+                    <option value="house">House Show</option>
+                    <option value="big">Big Show</option>
+                    <option value="ensemble">Ensemble</option>
+                </select>
+            </div>
+        </div>
+        <div id="ensembleField" class="form-row" style="display: none;">
+            <div class="form-group">
+                <label for="ensembleType">Ensemble Type</label>
+                <input type="text" name="Ensemble_Type" id="ensembleType" placeholder="Enter ensemble type">
+            </div>
+        </div>
 
-<!-- JavaScript -->
-<script>
-    function handleShowTypeChange() {
-        const showType = document.getElementById('showType').value;
-        const semesterField = document.getElementById('semester');
-        const ensembleField = document.getElementById('ensembleField');
-        const ensembleTypeField = document.getElementById('ensembleType');
+        <div class="form-row">
+            <div class="form-group">
+                <label for="instrumentPlayed">Instrument Played</label>
+                <input type="text" name="Instrument_Played" id="instrumentPlayed" placeholder="Enter instrument played">
+            </div>
+        </div>
+        <button type="submit" class="submit-button">Submit</button>
+    </form>
 
-        // Reset requirements
-        semesterField.removeAttribute('required');
-        ensembleTypeField.removeAttribute('required');
-
-        // If a show type is selected, make Semester mandatory
-        if (showType === 'house' || showType === 'big' || showType === 'ensemble') {
-            semesterField.setAttribute('required', true);
-        }
-
-        // If Ensemble is selected, make Ensemble Type mandatory and show the field
-        if (showType === 'ensemble') {
-            ensembleField.style.display = 'block';
-            ensembleTypeField.setAttribute('required', true);
-        } else {
-            ensembleField.style.display = 'none';
-        }
-    }
-
-    function toggleDropdown() {
-        const dropdownMenu = document.getElementById('dropdownMenu');
-        dropdownMenu.style.display =
-            dropdownMenu.style.display === 'block' ? 'none' : 'block';
-    }
-
-    // Close dropdown when clicking outside of it
-    document.addEventListener('click', (event) => {
-        const dropdown = document.querySelector('.dropdown');
-        const dropdownMenu = document.getElementById('dropdownMenu');
-
-        if (!dropdown.contains(event.target)) {
-            dropdownMenu.style.display = 'none';
-        }
-    });
-
-    document.getElementById('generalForm').addEventListener('submit', function (e) {
-    const netIDInput = document.getElementById('generalNetID');
-    const meetingNumInput = document.getElementById('meetingNum');
-
-    // If the form is for the meeting, do not require the NetID
-    if (meetingNumInput.value && !netIDInput.disabled) {
-        if (!netIDInput.value.trim()) {
-            e.preventDefault();
-            alert('NetID is required for member data but is optional for meeting data!');
-        }
-    }
-});
-
-</script>
 </body>
 </html>
