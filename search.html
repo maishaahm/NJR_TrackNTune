@@ -34,7 +34,7 @@
         <h2>Filters</h2>
 
         <!-- Essential Filters -->
-        <form id="filter-form" class="filter-form">
+        <form id="filter-form" class="filter-form" action="search.php" method="post">
             <!-- Relation and Name/NetID -->
             <div class="essential-filters">
                 <div class="filter-group">
@@ -42,7 +42,6 @@
                     <select id="relation" name="relation" onchange="updateFilters()">
                         <option value="">(Leave empty to search the entire database)</option>
                         <option value="Member">Member</option>
-                        <option value="Meeting">Meeting</option>
                         <option value="Instrument">Instrument</option>
                         <option value="Ensemble">Ensemble</option>
                         <option value="BigShow">Big Show</option>
